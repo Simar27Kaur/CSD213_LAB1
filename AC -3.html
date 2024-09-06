@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 2px solid black;
+  font-size: medium;
+  font-style:oblique;
+  font-weight: 500;
+}
+</style>
+</head>
+<body>
+
+<p>Click the buttons to create and delete row(s) for the table.</p>
+
+<table id="myTable">
+  <tr>
+    <td>Row1 cell1</td>
+    <td>Row1 cell2</td>
+  </tr>
+  <tr>
+    <td>Row2 cell1</td>
+    <td>Row2 cell2</td>
+  </tr>
+  <tr>
+    <td>Row3 cell1</td>
+    <td>Row3 cell2</td>
+  </tr>
+
+  <tr>
+    <td>Row4 cell1</td>
+    <td>Row4 cell2</td>
+  </tr>
+
+  <tr>
+    <td>Row5 cell1</td>
+    <td>Row5 cell2</td>
+  </tr>
+</table>
+<br>
+
+<button onclick="myCreateFunction()">Create Row</button>
+<button onclick="myDeleteFunction()">Delete row</button>
+
+<script>
+
+    x=5;
+    y=5
+function myCreateFunction() {
+
+   x++
+   y++
+
+
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(-1); 
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  cell1.innerHTML = "Row"+x+"cell1";
+  cell2.innerHTML = "Row"+x+" cell2";
+}
+
+function myDeleteFunction() {
+
+  if(y<1){
+
+document.getElementById("myTable").innerHTML="No more rows to show";
+
+}else{
+
+
+y--
+
+document.getElementById("myTable").deleteRow(0);
+}
+}
+</script>
+
+</body>
+</html>
